@@ -29,3 +29,12 @@ So, feel free to ⭐️ that to get notified whenever I publish the new code.
 - Code: https://github.com/jatinkrmalik/advent-of-code-2023/tree/main/day_1
 - Blog: https://medium.com/@jatinkrmalik/day-1-advent-of-code-2023-259c8e149b83
 
+## Day 2
+
+<p align="center">
+  <img src="https://github.com/jatinkrmalik/advent-of-code-2023/assets/7387945/6eb532d0-aa80-4b44-ad51-3d73686bfa21" width=75% align=center>
+</p>
+
+- Code: https://github.com/jatinkrmalik/advent-of-code-2023/tree/main/day_2
+- Blog: https://medium.com/@jatinkrmalik/205ec10ed40f
+
