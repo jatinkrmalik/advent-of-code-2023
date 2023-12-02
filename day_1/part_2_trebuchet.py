@@ -28,6 +28,10 @@ def get_combined_digits(line):
     # add existing numerical digits and their positions
     positions.extend((idx, ch) for idx, ch in enumerate(line) if ch.isdigit())
 
+    # handle no digits case
+    if not positions:
+        return 0
+
     # sort by position idx
     positions.sort(key=lambda x: x[0])
 
@@ -39,10 +43,10 @@ def sum_calibration_values(lines):
     sum = 0
     for line in lines:
         tmp = get_combined_digits(line.strip())
-        print(f"{line.strip()} -> {tmp}")
+        # print(f"{line.strip()} -> {tmp}")
         sum += tmp
 
-    print(sum)
+    return sum
 
 def test_calibration_values():
     test_cases = [
@@ -53,12 +57,13 @@ def test_calibration_values():
         ("4nineeightseven2", 42),
         ("zoneight234", 14),
         ("7pqrstsixteen", 76),
+        ("no digits here", 0)
     ]
 
     for line, expected in test_cases:
-        assert get_combined_digits(line) == expected
+        assert get_combined_digits(line) == expected, f"Failed on {line}"
 
-    assert sum_calibration_values([line for line, _ in test_cases]) == 281
+    assert sum_calibration_values([line for line, _ in test_cases]) == 281, "Sum test failed"
     print("All tests passed")
 
 
@@ -67,7 +72,9 @@ def main():
         lines = f.readlines()
         print(sum_calibration_values(lines))
 
-# use this block to run the test function
 if __name__ == "__main__":
-    # test_calibration_values()
+    # run the test function
+    test_calibration_values()
+
+    # execute the main function
     main()
