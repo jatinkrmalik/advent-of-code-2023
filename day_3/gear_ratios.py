@@ -1,3 +1,5 @@
+# --- Day 3: Gear Ratios ---
+
 class EngineSchematicAnalyzer:
     DIRECTIONS = [
         (-1, -1), # Top-left
