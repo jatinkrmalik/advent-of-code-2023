@@ -38,3 +38,12 @@ So, feel free to ⭐️ that to get notified whenever I publish the new code.
 - Code: https://github.com/jatinkrmalik/advent-of-code-2023/tree/main/day_2
 - Blog: https://medium.com/@jatinkrmalik/205ec10ed40f
 
+## Day 3: Gear Ratios
+
+<p align="center">
+  <img src="https://github.com/jatinkrmalik/advent-of-code-2023/assets/7387945/54113f1e-b76e-4351-8844-4352b8fa57a5" width=75% align=center>
+</p>
+
+- Code: https://github.com/jatinkrmalik/advent-of-code-2023/tree/main/day_2
+- Blog: https://medium.com/@jatinkrmalik/day-3-gear-ratios-advent-of-code-2023-python-5991963014ee
+
