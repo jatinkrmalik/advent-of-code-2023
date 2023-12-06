@@ -44,6 +44,24 @@ So, feel free to ⭐️ that to get notified whenever I publish the new code.
   <img src="https://github.com/jatinkrmalik/advent-of-code-2023/assets/7387945/54113f1e-b76e-4351-8844-4352b8fa57a5" width=75% align=center>
 </p>
 
-- Code: https://github.com/jatinkrmalik/advent-of-code-2023/tree/main/day_2
+- Code: https://github.com/jatinkrmalik/advent-of-code-2023/tree/main/day_3
 - Blog: https://medium.com/@jatinkrmalik/day-3-gear-ratios-advent-of-code-2023-python-5991963014ee
 
+## Day 4: Scratchcards
+
+<p align="center">
+  <img src="https://github.com/jatinkrmalik/advent-of-code-2023/assets/7387945/25179957-c7e6-455f-a204-ea7f7493c304" width=75% align=center>
+</p>
+
+- Code: https://github.com/jatinkrmalik/advent-of-code-2023/tree/main/day_4
+- Blog: https://medium.com/@jatinkrmalik/day-4-scratchcards-advent-of-code-2023-python-550a074ccb37
+
+## Day 5: If You Give A Seed A Fertilizer
+
+<p align="center">
+  <img src="https://github.com/jatinkrmalik/advent-of-code-2023/assets/7387945/43dd3688-ca3b-4eeb-a9ae-f58526b7cfd6" width=75% align=center>
+</p>
+
+
+- Code: https://github.com/jatinkrmalik/advent-of-code-2023/tree/main/day_5
+- Blog: https://medium.com/@jatinkrmalik/day-5-if-you-give-a-seed-a-fertilizer-advent-of-code-2023-python-b77999534492
