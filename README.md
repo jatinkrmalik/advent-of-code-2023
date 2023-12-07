@@ -65,3 +65,14 @@ So, feel free to ⭐️ that to get notified whenever I publish the new code.
 
 - Code: https://github.com/jatinkrmalik/advent-of-code-2023/tree/main/day_5
 - Blog: https://medium.com/@jatinkrmalik/day-5-if-you-give-a-seed-a-fertilizer-advent-of-code-2023-python-b77999534492
+
+## Day 6: Wait for It
+
+<p align="center">
+  <img src="https://github.com/jatinkrmalik/advent-of-code-2023/assets/7387945/b6e47736-840c-4d16-9020-8fe05910d662" width=75% align=center>
+</p>
+
+- Code: https://github.com/jatinkrmalik/advent-of-code-2023/tree/main/day_6
+- Blog: https://medium.com/@jatinkrmalik/day-3-gear-ratios-advent-of-code-2023-python-5991963014ee
+
+
