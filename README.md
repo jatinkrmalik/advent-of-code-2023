@@ -75,4 +75,20 @@ So, feel free to ⭐️ that to get notified whenever I publish the new code.
 - Code: https://github.com/jatinkrmalik/advent-of-code-2023/tree/main/day_6
 - Blog: https://medium.com/@jatinkrmalik/day-3-gear-ratios-advent-of-code-2023-python-5991963014ee
 
+## Day 7: Camel Cards
 
+<p align="center">
+  <img src="https://github.com/jatinkrmalik/advent-of-code-2023/assets/7387945/66386d65-e348-41f8-b99f-50eb301993de" width=75% align=center>
+</p>
+
+- Code: https://github.com/jatinkrmalik/advent-of-code-2023/tree/main/day_7
+- Blog: https://medium.com/@jatinkrmalik/day-7-camel-cards-advent-of-code-2023-python-6e7694360715
+
+## Day 8: Haunted Wasteland
+
+<p align="center">
+  <img src="https://github.com/jatinkrmalik/advent-of-code-2023/assets/7387945/1b9259f3-2762-4b7d-a18e-945a99113588" width=75% align=center>
+</p>
+
+- Code: https://github.com/jatinkrmalik/advent-of-code-2023/tree/main/day_8
+- Blog: https://medium.com/@jatinkrmalik/day-8-haunted-wasteland-advent-of-code-2023-python-87c6b4cf22c2
