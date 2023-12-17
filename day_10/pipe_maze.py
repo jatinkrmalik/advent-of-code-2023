@@ -59,11 +59,11 @@ class MazeSolver:
         """
         self.maze = maze
 
-    def find_cycle(self, start):
+    def find_loop(self, start):
         """
-        Find the cycle in the maze starting from the given position.
+        Find the loop in the maze starting from the given position.
         :param start: Tuple (x, y) as the starting position.
-        :return: List of tuples representing the cycle path.
+        :return: List of tuples representing the loop path.
         """
         stack = [start]
         visited = {start}
@@ -80,8 +80,8 @@ class MazeSolver:
                         )
                         break
                     elif path_tracker[(x, y)] != (nx, ny):
-                        return self.construct_cycle(path_tracker, x, y, nx, ny)
-        raise ValueError("No cycle found")
+                        return self.construct_loop(path_tracker, x, y, nx, ny)
+        raise ValueError("No loop found")
 
     def can_move(self, x, y, nx, ny, direction):
         """
@@ -112,28 +112,43 @@ class MazeSolver:
         visited.add((nx, ny))
         path_tracker[(nx, ny)] = (x, y)
 
-    def construct_cycle(self, path_tracker, x, y, nx, ny):
+    def construct_loop(self, path_tracker, x, y, nx, ny):
         """
-        Construct the cycle path when a cycle is detected.
+        Construct the loop path when a loop is detected.
         :param path_tracker: Dictionary tracking the path taken.
         :param x, y: Current position coordinates.
-        :param nx, ny: Detected cycle starting position coordinates.
-        :return: List of tuples representing the cycle path.
+        :param nx, ny: Detected loop starting position coordinates.
+        :return: List of tuples representing the loop path.
         """
-        cycle = [(nx, ny)]
+        loop = [(nx, ny)]
         while (x, y) != (nx, ny):
-            cycle.append((x, y))
+            loop.append((x, y))
             x, y = path_tracker[(x, y)]
-        return cycle
+        return loop
 
     @staticmethod
-    def get_steps_to_the_farthest_point(cycle):
+    def get_steps_to_the_farthest_point(loop):
         """
-        Calculate the number of steps to the farthest point in the cycle.
-        :param cycle: List of tuples representing the cycle path.
+        Calculate the number of steps to the farthest point in the loop.
+        :param loop: List of tuples representing the loop path.
         :return: Integer representing the number of steps.
         """
-        return len(cycle) // 2
+        return len(loop) // 2
+
+    def num_of_tiles_enclosed_by_loop(self, loop):
+        """
+        Calculate the area enclosed by the loop.
+        :param perimeter_points: List of tuples representing the loop perimeter.
+        :return: Integer representing the enclosed area.
+        """
+        area = 0
+        n = len(loop)
+        for i in range(n):
+            j = (i + 1) % n
+            area += loop[i][0] * loop[j][1]
+            area -= loop[j][0] * loop[i][1]
+        area = abs(area) // 2
+        return area - n // 2 + 1
 
 
 def part_one():
@@ -147,11 +162,29 @@ def part_one():
 
     # Find the starting position and solve the maze
     start = maze.find_animal_start()
-    cycle = solver.find_cycle(start)
-    farthest_point = solver.get_steps_to_the_farthest_point(cycle)
+    loop = solver.find_loop(start)
+    farthest_point = solver.get_steps_to_the_farthest_point(loop)
 
     # Print the result
     print(f"❗️ Steps to the farthest point: {farthest_point}")
+
+
+def part_two():
+    # Read the maze input from a file
+    with open("day_10/input.txt") as f:
+        maze_input = f.read()
+
+    # Initialize the Maze and MazeSolver
+    maze = Maze(maze_input)
+    solver = MazeSolver(maze.maze)
+
+    # Find the starting position and solve the maze
+    start = maze.find_animal_start()
+    loop = solver.find_loop(start)
+    enclosed_tiles = solver.num_of_tiles_enclosed_by_loop(loop)
+
+    # Print the result
+    print(f"❗️ Enclosed tiles: {enclosed_tiles}")
 
 
 def test_simple_maze():
@@ -164,8 +197,8 @@ def test_simple_maze():
     maze = Maze(maze_input)
     solver = MazeSolver(maze.maze)
     start = maze.find_animal_start()
-    cycle = solver.find_cycle(start)
-    farthest_point = solver.get_steps_to_the_farthest_point(cycle)
+    loop = solver.find_loop(start)
+    farthest_point = solver.get_steps_to_the_farthest_point(loop)
     assert farthest_point == 4, f"Expected 4, got {farthest_point}"
     print("✅ Simple maze test passed")
 
@@ -179,8 +212,8 @@ L|-JF"""
     maze = Maze(maze_input)
     solver = MazeSolver(maze.maze)
     start = maze.find_animal_start()
-    cycle = solver.find_cycle(start)
-    farthest_point = solver.get_steps_to_the_farthest_point(cycle)
+    loop = solver.find_loop(start)
+    farthest_point = solver.get_steps_to_the_farthest_point(loop)
     assert farthest_point == 4, f"Expected 4, got {farthest_point}"
     print("✅ Complex maze test passed")
 
@@ -194,8 +227,8 @@ LJ..."""
     maze = Maze(maze_input)
     solver = MazeSolver(maze.maze)
     start = maze.find_animal_start()
-    cycle = solver.find_cycle(start)
-    farthest_point = solver.get_steps_to_the_farthest_point(cycle)
+    loop = solver.find_loop(start)
+    farthest_point = solver.get_steps_to_the_farthest_point(loop)
     assert farthest_point == 8, f"Expected 8, got {farthest_point}"
     print("✅ More complex maze test passed")
 
@@ -209,16 +242,85 @@ LJ.LJ"""
     maze = Maze(maze_input)
     solver = MazeSolver(maze.maze)
     start = maze.find_animal_start()
-    cycle = solver.find_cycle(start)
-    farthest_point = solver.get_steps_to_the_farthest_point(cycle)
+    loop = solver.find_loop(start)
+    farthest_point = solver.get_steps_to_the_farthest_point(loop)
     assert farthest_point == 8, f"Expected 8, got {farthest_point}"
     print("✅ Most complex maze test passed")
 
 
+def test_enclosed_tiles_in_maze():
+    maze_input = """...........
+.S-------7.
+.|F-----7|.
+.||.....||.
+.||.....||.
+.|L-7.F-J|.
+.|..|.|..|.
+.L--J.L--J.
+..........."""
+    maze = Maze(maze_input)
+    solver = MazeSolver(maze.maze)
+    start = maze.find_animal_start()
+    loop = solver.find_loop(start)
+
+    enclosed_tiles = solver.num_of_tiles_enclosed_by_loop(loop)
+    assert enclosed_tiles == 4, f"Expected 4, got {enclosed_tiles}"
+    print("✅ Enclosed tiles in maze test passed")
+
+
+def test_enclosed_tiles_in_tighter_maze():
+    maze_input = """..........
+.S------7.
+.|F----7|.
+.||....||.
+.||....||.
+.|L-7F-J|.
+.|..||..|.
+.L--JL--J.
+.........."""
+    maze = Maze(maze_input)
+    solver = MazeSolver(maze.maze)
+    start = maze.find_animal_start()
+    loop = solver.find_loop(start)
+
+    enclosed_tiles = solver.num_of_tiles_enclosed_by_loop(loop)
+    assert enclosed_tiles == 4, f"Expected 4, got {enclosed_tiles}"
+    print("✅ Enclosed tiles in tighter maze test passed")
+
+
+def test_enclosed_tiles_in_tightest_maze():
+    maze_input = """FF7FSF7F7F7F7F7F---7
+L|LJ||||||||||||F--J
+FL-7LJLJ||||||LJL-77
+F--JF--7||LJLJ7F7FJ-
+L---JF-JLJ.||-FJLJJ7
+|F|F-JF---7F7-L7L|7|
+|FFJF7L7F-JF7|JL---7
+7-L-JL7||F7|L7F-7F7|
+L.L7LFJ|||||FJL7||LJ
+L7JLJL-JLJLJL--JLJ.L"""
+    maze = Maze(maze_input)
+    solver = MazeSolver(maze.maze)
+    start = maze.find_animal_start()
+    loop = solver.find_loop(start)
+
+    enclosed_tiles = solver.num_of_tiles_enclosed_by_loop(loop)
+    assert enclosed_tiles == 10, f"Expected 10, got {enclosed_tiles}"
+    print("✅ Enclosed tiles in tightest maze test passed")
+
+
 if __name__ == "__main__":
+    # --- Part One ---
     test_simple_maze()
     test_complex_maze()
     test_more_complex_maze()
     test_most_complex_maze()
 
     part_one()
+
+    # --- Part Two ---
+    test_enclosed_tiles_in_maze()
+    test_enclosed_tiles_in_tighter_maze()
+    test_enclosed_tiles_in_tightest_maze()
+
+    part_two()
