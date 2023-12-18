@@ -92,3 +92,34 @@ So, feel free to ⭐️ that to get notified whenever I publish the new code.
 
 - Code: https://github.com/jatinkrmalik/advent-of-code-2023/tree/main/day_8
 - Blog: https://medium.com/@jatinkrmalik/day-8-haunted-wasteland-advent-of-code-2023-python-87c6b4cf22c2
+
+  
+## Day 9: Mirage Maintenance
+
+<p align="center">
+  <img src="https://github.com/jatinkrmalik/advent-of-code-2023/assets/7387945/e4e1e3ab-61fe-4288-ad78-c051dc132d9b" width=75% align=center>
+</p>
+
+
+- Code: https://github.com/jatinkrmalik/advent-of-code-2023/tree/main/day_9
+- Blog: https://medium.com/@jatinkrmalik/day-9-mirage-maintenance-advent-of-code-2023-python-09315d783d3b
+
+  
+## Day 10: Pipe Maze
+
+<p align="center">
+  <img src="https://github.com/jatinkrmalik/advent-of-code-2023/assets/7387945/70db2572-6fa2-403d-82d9-36226035363e" width=75% align=center>
+</p>
+
+- Code: https://github.com/jatinkrmalik/advent-of-code-2023/tree/main/day_10
+- Blog: https://medium.com/@jatinkrmalik/wip-day-10-pipe-maze-advent-of-code-2023-python-2a4c8622707f
+
+  
+## Day 11: Cosmic Expansion
+
+<p align="center">
+  <img src="https://github.com/jatinkrmalik/advent-of-code-2023/assets/7387945/42d0e95a-d02a-4064-b9b3-c5b604890980" width=75% align=center>
+</p>
+
+- Code: https://github.com/jatinkrmalik/advent-of-code-2023/tree/main/day_11
+- Blog: https://medium.com/@jatinkrmalik/day-11-cosmic-expansion-advent-of-code-2023-python-6e545dad06bb
