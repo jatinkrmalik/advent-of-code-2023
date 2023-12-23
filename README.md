@@ -123,3 +123,40 @@ So, feel free to ⭐️ that to get notified whenever I publish the new code.
 
 - Code: https://github.com/jatinkrmalik/advent-of-code-2023/tree/main/day_11
 - Blog: https://medium.com/@jatinkrmalik/day-11-cosmic-expansion-advent-of-code-2023-python-6e545dad06bb
+
+## Day 12: Hot Springs
+
+<p align="center">
+  <img src="https://github.com/jatinkrmalik/advent-of-code-2023/assets/7387945/80e4ed1e-79a2-48b3-8bc2-692c2dcd83f9" width=75% align=center>
+</p>
+
+- Code: https://github.com/jatinkrmalik/advent-of-code-2023/tree/main/day_12
+- Blog: https://medium.com/@jatinkrmalik/day-12-hot-springs-advent-of-code-2023-python-77506773abfb
+
+## Day 13: Point of Incidence
+
+<p align="center">
+  <img src="https://github.com/jatinkrmalik/advent-of-code-2023/assets/7387945/b770f351-331f-4573-a92c-a27d63f9d75e" width=75% align=center>
+</p>
+
+- Code: https://github.com/jatinkrmalik/advent-of-code-2023/tree/main/day_13
+- Blog: https://medium.com/@jatinkrmalik/day-13-point-of-incidence-advent-of-code-2023-python-4fea00eb98fb
+
+## Day 14: Parabolic Reflector Dish 
+
+<p align="center">
+  <img src="https://github.com/jatinkrmalik/advent-of-code-2023/assets/7387945/7f34afea-4c68-499f-812b-1dadecce9695" width=75% align=center>
+</p>
+
+- Code: https://github.com/jatinkrmalik/advent-of-code-2023/tree/main/day_14
+- Blog: https://medium.com/@jatinkrmalik/day-14-parabolic-reflector-dish-advent-of-code-2023-python-10760f12f5a5
+
+## Day 15: Lens Library
+
+<p align="center">
+  <img src="https://github.com/jatinkrmalik/advent-of-code-2023/assets/7387945/2c4a60af-4afc-4dd9-ab28-5f2b31773b68" width=75% align=center>
+</p>
+
+- Code: https://github.com/jatinkrmalik/advent-of-code-2023/tree/main/day_15
+- Blog: https://medium.com/@jatinkrmalik/day-15-lens-library-advent-of-code-2023-python-0597f87f340e
+
