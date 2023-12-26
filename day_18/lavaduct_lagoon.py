@@ -180,6 +180,7 @@ def part_two():
 
 if __name__ == "__main__":
     test_lavaduct_lagoon()
-    test_lavaduct_lagoon_hex()
     part_one()
+    
+    test_lavaduct_lagoon_hex()
     part_two()
