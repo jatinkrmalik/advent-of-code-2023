@@ -17,6 +17,7 @@ dig_plan_to_direction = {
     "R": Direction.RIGHT,
 }
 
+
 class TrenchLine:
     hex_to_directions = {
         "0": Direction.RIGHT,
@@ -46,9 +47,7 @@ class TrenchLine:
         hex_code = hex_code[1:-1][1:]
         dig_distance = int(hex_code[:-1], 16)
         dig_direction_hex = hex_code[-1]
-        dig_direction = TrenchLine.hex_to_directions[
-            dig_direction_hex
-        ] 
+        dig_direction = TrenchLine.hex_to_directions[dig_direction_hex]
         return TrenchLine(start_x, start_y, dig_direction, dig_distance)
 
 
@@ -73,10 +72,7 @@ class Lagoon:
             )
             / 2.0
         )
-        num_lagoon_tiles = lagoon_area - Lagoon.get_trench_volume(trench_lines) // 2 + 1
-        return int(
-            (num_lagoon_tiles + Lagoon.get_trench_volume(trench_lines)) * Lagoon.DEPTH
-        )
+        return int(lagoon_area + Lagoon.get_trench_volume(trench_lines) // 2 + 1) * Lagoon.DEPTH
 
 
 def dig_trench_simple(dig_plan):
@@ -84,9 +80,7 @@ def dig_trench_simple(dig_plan):
     trench_lines = []
 
     for direction_key, distance, _ in dig_plan:
-        direction = dig_plan_to_direction[
-            direction_key
-        ] 
+        direction = dig_plan_to_direction[direction_key]
         trench_line = TrenchLine(start_x, start_y, direction, int(distance))
         trench_lines.append(trench_line)
         start_x, start_y = trench_line.end_x, trench_line.end_y
@@ -181,6 +175,6 @@ def part_two():
 if __name__ == "__main__":
     test_lavaduct_lagoon()
     part_one()
-    
+
     test_lavaduct_lagoon_hex()
     part_two()
